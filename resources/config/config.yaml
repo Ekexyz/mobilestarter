@@ -1,0 +1,28 @@
+defaults:
+  provider: local
+  device: my_android
+  session: calculator
+  EXECDIR: ~
+providers:
+  - provider: local
+    host: localhost
+    port: 4723
+    appium_url: http://${host}:${port}/wd/hub
+    capabilities:
+      remote_url: $appium_url
+devices:
+  - device: my_android
+    capabilities:
+      udid: ~
+      deviceName: My Development Android
+      platformName: Android
+      automationName: UIAutomator2
+      fullReset: false
+      noReset: true
+      autoGrantPermissions : true
+sessions:
+    - session: calculator
+      capabilities:
+          appPackage: com.miui.calculator
+          appActivity: com.miui.calculator.cal.CalculatorActivity
+
